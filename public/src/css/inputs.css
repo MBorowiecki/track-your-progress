@@ -1,0 +1,9 @@
+.input {
+    width: 100%;
+    padding: 16px 32px;
+    box-sizing: border-box;
+
+    :not(:last-child) {
+        margin-bottom: 16px;
+    }
+}
