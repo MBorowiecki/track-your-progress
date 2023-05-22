@@ -7,7 +7,7 @@ class DefaultController extends AppController {
         $this->render('login');
     }
 
-    public function project() {
-        echo 'Project';
+    public function dashboard() {
+        echo 'Dashboard';
     }
 }
