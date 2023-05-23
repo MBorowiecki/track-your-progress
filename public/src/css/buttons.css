@@ -1,0 +1,24 @@
+.button_primary {
+    background-color: #107361;
+    border: none;
+    color: white;
+    padding: 16px 24px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 16px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+    transition: background-color .2s ease-in-out;
+
+    &:hover {
+        background-color: #0a5f4f;
+    }
+}
+
+.link {
+    text-decoration: none;
+    cursor: pointer;
+}
