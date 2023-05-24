@@ -1,0 +1,55 @@
+.dashboard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.dashboard__item {
+    background-color: #0F5959;
+    border-radius: 16px;
+    padding: 16px;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+
+    width: 45vw;
+
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+
+    & .title {
+        font-size: 24px;
+        font-weight: 600;
+        color: white;
+        margin: 0px;
+    }
+
+    & .dashboard__item__excersise {
+        font-size: 14px;
+        color: white;
+    }
+
+    & .dashboard__header {
+        margin-bottom: 8px;
+        padding-bottom: 8px;
+
+        border-bottom: 1px solid #797979;
+
+        & .button_outline {
+            padding: 6px;
+        }
+
+        & img {
+            height: 20px;
+        }
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .dashboard__item {
+        width: 100%;
+    }
+}
