@@ -9,9 +9,7 @@
     <title>Track Your Progress - Register</title>
 </head>
 <body>
-    <header class="header">
-        <img src="public/assets/logo.svg" alt="logo" class="header_logo">
-    </header>
+    <?php include_once('public/components/header.php'); ?>
 
     <main class="center-content">
         <form class="login-form column_hcenter" action="register" method="POST">

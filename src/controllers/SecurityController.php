@@ -1,6 +1,5 @@
 <?php
 
-require_once 'AppSingleton.php';
 require_once 'AppController.php';
 require_once __DIR__.'/../models/User.php';
 require_once __DIR__.'/../repository/UserRepository.php';
@@ -22,9 +21,7 @@ class SecurityController extends AppController {
             return $this->render('login', ['messages' => ['Credentials provided are incorrect!']]);
         }
 
-        $app = AppSingleton::getInstance();
-
-        $app->user = $user;
+        $_SESSION['user'] = serialize($user);
 
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/dashboard");
@@ -55,8 +52,7 @@ class SecurityController extends AppController {
             return $this->render('register', ['messages' => ['Something went wrong! Try again later!']]);
         }
 
-        $app = AppSingleton::getInstance();
-        $app->user = $generatedUser;
+        $_SESSION['user'] = serialize($generatedUser);
 
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/dashboard");

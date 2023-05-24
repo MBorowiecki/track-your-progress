@@ -9,9 +9,7 @@
     <title>Track Your Progress - Dashboard</title>
 </head>
 <body>
-    <header class="header">
-        <img src="public/assets/logo.svg" alt="logo" class="header_logo">
-    </header>
+    <?php include_once('public/components/header.php'); ?>
 
     <main class="center-content">
         <?php
