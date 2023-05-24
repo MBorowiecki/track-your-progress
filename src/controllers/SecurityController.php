@@ -52,9 +52,7 @@ class SecurityController extends AppController {
             return $this->render('register', ['messages' => ['Something went wrong! Try again later!']]);
         }
 
-        $_SESSION['user'] = serialize($generatedUser);
-
         $url = "http://$_SERVER[HTTP_HOST]";
-        header("Location: {$url}/dashboard");
+        header("Location: {$url}/login");
     }
 }

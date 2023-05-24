@@ -17,11 +17,14 @@ class UserRepository extends Repository {
             return null;
         }
 
-        return new User(
+        $foundUser = new User(
             $user['email'],
             $user['password'],
-            $user['username']
+            $user['username'],
+            $user['id']
         );
+
+        return $foundUser;
     }
 
     public function addUser(User $user) {

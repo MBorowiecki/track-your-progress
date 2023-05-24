@@ -11,8 +11,8 @@
 <body>
     <?php include_once('public/components/header.php'); ?>
 
-    <main class="center-content">
-        <form class="login-form column_hcenter" action="login" method="POST">
+    <main class="center-content form">
+        <form class="login-form column_hcenter form" action="login" method="POST">
             <?php
                 if(isset($messages)) {
                 echo "<div class='login-form__messages mb-4'>";
@@ -23,21 +23,21 @@
                 }
             ?>
 
-            <div class="row mb-2">
-                <div class="input__container">
+            <div class="row mb-2 full_width">
+                <div class="input__container full_width">
                     <label class="input__label" for="email-input">E-mail</label>
                     <input class="input" type="text" placeholder="example@example.com" name="email">
                 </div>
             </div>
 
-            <div class="row mb-2">
-                <div class="input__container">
+            <div class="row mb-2 full_width">
+                <div class="input__container full_width">
                     <label class="input__label" for="email-input">Password</label>
                     <input class="input" type="password" placeholder="********" name="password">
                 </div>
             </div>
 
-            <div class="row row_hcenter mb-2">
+            <div class="row row_hcenter mb-2 full_width">
                 <button type="submit" class="button_primary full_width">Login</button>
             </div>
 

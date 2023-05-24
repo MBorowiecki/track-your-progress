@@ -1,28 +1,16 @@
 <?php
 
 require_once 'AppController.php';
+require_once __DIR__.'/../repository/ExcersiseGroupsRepository.php';
+require_once __DIR__.'/../repository/ExcersisesRepository.php';
 
 class DefaultController extends AppController {
     public function login() {
-        $user = unserialize($_SESSION['user']);
-
-        if($user) {
-            $url = "http://$_SERVER[HTTP_HOST]";
-            header("Location: {$url}/dashboard");
-        } else {
-            $this->render('login');
-        }
+        $this->render('login');
     }
 
     public function register() {
-        $user = unserialize($_SESSION['user']);
-
-        if($user) {
-            $url = "http://$_SERVER[HTTP_HOST]";
-            header("Location: {$url}/dashboard");
-        } else {
-            $this->render('register');
-        }
+        $this->render('register');
     }
 
     public function dashboard() {
@@ -32,7 +20,21 @@ class DefaultController extends AppController {
             $url = "http://$_SERVER[HTTP_HOST]";
             header("Location: {$url}/login");
         } else {
-            $this->render('dashboard');
+            $user_id = $user->getId();
+            $excersiseGroupsRepository = new ExcersiseGroupsRepository();
+            $excersisesRepository = new ExcersisesRepository();
+            $excersiseGroups = $excersiseGroupsRepository->getExcersiseGroups($user_id);
+            $latestExcersises = [];
+
+            if(!$excersiseGroups) {
+                $this->render('dashboard');
+            } else {
+                foreach($excersiseGroups as $excersiseGroup) {
+                    $latestExcersises[] = $excersisesRepository->getLatestExcersises($excersiseGroup->getId());
+                }
+    
+                $this->render('dashboard', ['excersiseGroups' => $excersiseGroups, 'latestExcersises' => $latestExcersises]);
+            }
         }
     }
 
@@ -42,5 +44,16 @@ class DefaultController extends AppController {
 
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/login");
+    }
+
+    public function newgroup() {
+        $user = unserialize($_SESSION['user']);
+
+        if(!$user) {
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/login");
+        } else {
+            $this->render('new-group');
+        }
     }
 }
