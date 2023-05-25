@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Track Your Progress - Login</title>
+    <script type="text/javascript" src="./public/src/js/credentials-validation.js" defer></script>
 </head>
 <body>
     <?php include_once('public/components/header.php'); ?>
@@ -27,6 +28,7 @@
                 <div class="input__container full_width">
                     <label class="input__label" for="email-input">E-mail</label>
                     <input class="input" type="text" placeholder="example@example.com" name="email">
+                    <span id="email-error" class="input__error close">Invalid e-mail</span>
                 </div>
             </div>
 
@@ -34,6 +36,7 @@
                 <div class="input__container full_width">
                     <label class="input__label" for="email-input">Password</label>
                     <input class="input" type="password" placeholder="********" name="password">
+                    <span id="password-error" class="input__error close">Invalid password</span>
                 </div>
             </div>
 

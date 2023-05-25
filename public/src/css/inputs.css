@@ -23,5 +23,22 @@
         :not(:last-child) {
             margin-bottom: 16px;
         }
+
+        &.error {
+            border: 1px solid #FF0000;
+        }
+    }
+    
+    & .input__error {
+        display: block;
+        margin-top: 4px;
+        margin-left: 12px;
+        font-size: 12px;
+        font-weight: 600;
+        color: #FF0000;
+
+        &.close {
+            display: none;
+        }
     }
 }

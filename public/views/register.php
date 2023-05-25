@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="./public/src/js/credentials-validation.js"></script>
     <title>Track Your Progress - Register</title>
 </head>
 <body>
@@ -26,7 +27,8 @@
             <div class="row mb-2 full_width">
                 <div class="input__container full_width">
                     <label class="input__label" for="email-input">Username</label>
-                    <input class="input" type="text" placeholder="Example" name="username">
+                    <input class="input validate" type="text" placeholder="Example" name="username">
+                    <span id="username-error" class="input__error close"></span>
                 </div>
             </div>
 
@@ -34,13 +36,15 @@
                 <div class="input__container full_width">
                     <label class="input__label" for="email-input">E-mail</label>
                     <input class="input" type="text" placeholder="example@example.com" name="email">
+                    <span id="email-error" class="input__error close"></span>
                 </div>
             </div>
 
             <div class="row mb-2 full_width">
                 <div class="input__container full_width">
                     <label class="input__label" for="email-input">Password</label>
-                    <input class="input" type="password" placeholder="********" name="password">
+                    <input class="input validate" type="password" placeholder="********" name="password">
+                    <span id="password-error" class="input__error close"></span>
                 </div>
             </div>
 
