@@ -11,11 +11,11 @@ Application Track Your Progress is focused on providing the best experience in t
 ```
 <?php
 
-const USERNAME = 'rwpacljg';
-const PASSWORD = 'UYxd1N76JeultRNaVRbKZN0qSmFjQ2RR';
-const HOST = 'balarama.db.elephantsql.com';
-const DATABASE = 'rwpacljg';
-const PORT = '5432';
+const USERNAME = '';
+const PASSWORD = '';
+const HOST = '';
+const DATABASE = '';
+const PORT = '';
 ```
 
 4. You are ready to go! Run `docker-compose up` to start the server
